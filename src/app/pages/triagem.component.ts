@@ -7,17 +7,20 @@ import {
 
 import { NgxMaskDirective } from 'ngx-mask';
 import { CalendarModule } from 'primeng/calendar';
+import { TriagemService } from '../services/triagem.service';
 
 @Component({
   standalone: true,
   imports: [ReactiveFormsModule, NgxMaskDirective, CalendarModule],
-  templateUrl: 'trilha.component.html',
-  styleUrl: 'trilha.component.scss',
+  templateUrl: 'triagem.component.html',
+  styleUrl: 'triagem.component.scss',
 })
-export class TrilhaComponent {
+export class TriagemComponent {
+  private triagemService = inject(TriagemService);
   private fb = inject(NonNullableFormBuilder);
   protected form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
+    cpf: ['', [Validators.required]],
     height: this.fb.control<number | null>(null, [
       Validators.required,
       Validators.max(2.8),
@@ -35,6 +38,8 @@ export class TrilhaComponent {
   });
 
   onSubmit() {
-    console.log(this.form.value);
+    if (this.form.valid) {
+      this.triagemService.addTriagem(this.form.value);
+    }
   }
 }

@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $sz-16;
+
+  min-height: 100dvh;
+}
+
+h1,
+p {
+  text-align: center;
+  max-width: 320px;
+}
+
+h1 {
+  @include display($primary-color);
+}
+
+p {
+  @include body;
+}
+
+.feedback_tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $white;
+  background-color: $emergency-tag-5;
+  border-radius: $sz-4;
+
+  height: $sz-32;
+  width: 320px;
+}
+
+.pacient_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $sz-8;
+
+  width: 320px;
+
+  p {
+    text-align: start;
+
+    &:first-child {
+      color: $primary-color;
+    }
+  }
+}

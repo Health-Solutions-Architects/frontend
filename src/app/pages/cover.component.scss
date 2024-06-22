@@ -1,0 +1,45 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $sz-16;
+
+  min-height: 100dvh;
+  background-color: $primary-color;
+}
+
+img {
+  animation: coverImage 2s ease;
+}
+
+h1 {
+  @include display;
+  text-align: center;
+  max-width: 320px;
+  animation: coverText 2s ease;
+}
+
+@keyframes coverImage {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coverText {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

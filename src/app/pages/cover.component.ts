@@ -1,11 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'hsa-intro',
   standalone: true,
   imports: [NgOptimizedImage],
-  styleUrl: 'intro.component.scss',
+  styleUrl: 'cover.component.scss',
   template: `
     <img
       ngSrc="assets/svg/triagem_illustration.svg"
@@ -17,4 +17,10 @@ import { Component } from '@angular/core';
     <h1>Health Solutions Architects</h1>
   `,
 })
-export class IntroComponent {}
+export class CoverComponent implements OnInit {
+  private router = inject(Router);
+
+  ngOnInit() {
+    setTimeout(() => this.router.navigate(['/', 'triagem']), 4000);
+  }
+}

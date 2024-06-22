@@ -17,6 +17,12 @@ $sz-24: 1.5rem;
 $sz-32: 2rem;
 $sz-64: 4rem;
 
+$emergency-tag-1: #1b68ab;
+$emergency-tag-2: #26743f;
+$emergency-tag-3: #f0cb23;
+$emergency-tag-4: #cd612d;
+$emergency-tag-5: #ec2045;
+
 // FONT VARIABLES
 @mixin display($color: $white) {
   color: $color;
@@ -28,4 +34,10 @@ $sz-64: 4rem;
   color: $color;
   font-size: $sz-16;
   font-weight: 700;
+}
+
+@mixin body($color: $gray) {
+  color: $gray;
+  font-size: $sz-14;
+  font-weight: 400;
 }
