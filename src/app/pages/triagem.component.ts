@@ -21,6 +21,11 @@ export class TriagemComponent {
   protected form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     cpf: ['', [Validators.required]],
+    weight: this.fb.control<number | null>(null, [
+      Validators.required,
+      Validators.max(250),
+      Validators.min(0),
+    ]),
     height: this.fb.control<number | null>(null, [
       Validators.required,
       Validators.max(2.8),

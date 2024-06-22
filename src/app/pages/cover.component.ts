@@ -1,10 +1,10 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, RouterLink],
   styleUrl: 'cover.component.scss',
   template: `
     <img
@@ -15,12 +15,11 @@ import { Router } from '@angular/router';
       priority
     />
     <h1>Health Solutions Architects</h1>
+    <div class="actions">
+      <a routerLink="/doctor/login"> Equipe Médica </a>
+      <a routerLink="/pacient/login"> Atendimento com Login </a>
+      <a routerLink="triagem"> Atendimento Rápido </a>
+    </div>
   `,
 })
-export class CoverComponent implements OnInit {
-  private router = inject(Router);
-
-  ngOnInit() {
-    setTimeout(() => this.router.navigate(['/', 'triagem']), 4000);
-  }
-}
+export class CoverComponent {}

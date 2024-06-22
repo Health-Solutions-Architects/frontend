@@ -5,15 +5,6 @@
   @include center;
 }
 
-form {
-  gap: $sz-16;
-  width: 280px;
-}
-
-.form_control {
-  gap: $sz-8;
-}
-
 h1 {
   @include display($primary-color);
 }

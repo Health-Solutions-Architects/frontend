@@ -23,13 +23,25 @@
   </div>
 
   <div class="form_control">
+    <label for="weight">Peso</label>
+    <input
+      type="text"
+      id="weight"
+      mask="0*,999"
+      [dropSpecialCharacters]="false"
+      placeholder="ex: 85,2"
+      formControlName="weight"
+    />
+  </div>
+
+  <div class="form_control">
     <label for="height">Altura</label>
     <input
       type="text"
       id="height"
-      mask="0.00"
+      mask="0,09"
       [dropSpecialCharacters]="false"
-      placeholder="Digite a sua altura em metros"
+      placeholder="ex: 1,70"
       formControlName="height"
     />
   </div>
