@@ -1,0 +1,46 @@
+<h1>Triagem</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form_control">
+    <label for="name">Nome completo</label>
+    <input
+      type="text"
+      id="name"
+      autocomplete="name"
+      placeholder="Infome seu nome completo"
+      formControlName="name"
+    />
+  </div>
+
+  <div class="form_control">
+    <label for="height">Altura</label>
+    <input
+      type="text"
+      id="height"
+      mask="0.00"
+      [dropSpecialCharacters]="false"
+      placeholder="Digite a sua altura em metros"
+      formControlName="height"
+    />
+  </div>
+
+  <div class="form_control">
+    <label for="dateOfBirth">Data de nascimento</label>
+    <p-calendar
+      formControlName="dateOfBirth"
+      inputId="dateOfBirth"
+      dateFormat="dd/mm/yy"
+      placeholder="Digite sua data de nascimento"
+    />
+  </div>
+
+  <div class="form_control">
+    <label for="symptoms">Sintomas</label>
+    <textarea
+      id="symptoms"
+      formControlName="symptoms"
+      placeholder="Digite sua data de nascimento"
+    ></textarea>
+  </div>
+
+  <button type="submit">Solicitar Atendimento!</button>
+</form>

@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+:host,
+form,
+.form_control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:host {
+  align-items: center;
+  gap: $sz-32;
+  min-height: 100dvh;
+}
+
+form {
+  gap: $sz-16;
+  width: 280px;
+}
+
+.form_control {
+  gap: $sz-8;
+}
+
+h1 {
+  @include display($primary-color);
+}
+
+label {
+  color: $primary-color;
+  font-size: $sz-14;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  color: $primary-color;
+  font-size: $sz-14;
+
+  padding: 0 $sz-8;
+  border: 1px solid $primary-color;
+  border-radius: $sz-4;
+  outline: none;
+  height: $sz-32;
+
+  &:focus {
+    border: 1px solid $secondary-color;
+  }
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+textarea {
+  padding: $sz-4 $sz-8;
+  min-height: $sz-64;
+  height: fit-content;
+}
+
+button {
+  @include cta;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: $sz-4;
+  outline: none;
+
+  margin-top: $sz-16;
+  height: $sz-32;
+  width: 100%;
+}
