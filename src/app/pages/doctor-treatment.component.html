@@ -1,5 +1,6 @@
 <h1>Atendimentos</h1>
 
+@if(true){
 <div class="datetime">
   <p>23/06/2026</p>
   <p>10:20</p>
@@ -61,3 +62,13 @@
     <p>...</p>
   </div>
 </div>
+} @else {
+<img
+  ngSrc="assets/svg/treatment_illustration.svg"
+  height="260"
+  width="260"
+  alt="Obter mais um atendimento"
+/>
+<h2>Você finalizou seu atendimento</h2>
+<button>Iniciar</button>
+}
