@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: 'cover.component.scss',
   template: `
     <img
-      ngSrc="assets/svg/triagem_illustration.svg"
+      ngSrc="assets/triagem_illustration.svg"
       height="160"
       width="160"
       alt="Triagem Virtual"

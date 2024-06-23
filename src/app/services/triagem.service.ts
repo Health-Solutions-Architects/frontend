@@ -1,10 +1,15 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { take } from 'rxjs';
+import { Router } from '@angular/router';
+import { catchError, of, take } from 'rxjs';
 
 import { environment } from '@Environments/environment';
-import { Triagem, TriagemResponse } from '@Types/triagem.type';
-import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+import {
+  PreTriagemResponse,
+  Triagem,
+  TriagemResponse,
+} from '@Types/triagem.type';
 
 @Injectable({
   providedIn: 'root',
@@ -12,12 +17,29 @@ import { Router } from '@angular/router';
 export class TriagemService {
   private router = inject(Router);
   private http = inject(HttpClient);
+  private authService = inject(AuthService);
   private readonly path = environment.apiUrl + 'pre-triagem';
 
   triagemResponse = signal<{
     response: TriagemResponse;
     pacient: Triagem;
   } | null>(null);
+
+  getPreTriagemByCpf(cpf: string) {
+    return this.http
+      .get<PreTriagemResponse>(this.path + `/${cpf}`, {
+        headers: this.authService.getAuthHeader(),
+      })
+      .pipe(catchError(() => of(null)));
+  }
+
+  finishTriagem(form: any) {
+    return this.http
+      .post(environment.apiUrl + 'triagem', form, {
+        headers: this.authService.getAuthHeader(),
+      })
+      .subscribe((res) => console.log(res));
+  }
 
   addTriagem(form: Triagem) {
     return this.http

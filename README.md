@@ -1,27 +1,63 @@
 # HealthSolutionsArchitects
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
+## Pré-requisitos
 
-## Development server
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Node.js** (v20 ou superior)
+2. **Angular CLI** (v18 ou superior)
 
-## Code scaffolding
+## Passos para Executar o Projeto Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Instruções
 
-## Build
+Navegue até o diretório do projeto e instale todas as dependências necessárias:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+  npm install
+```
 
-## Running unit tests
+### 2. Executar o Servidor de Desenvolvimento
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Após instalar todas as dependências, você pode iniciar o servidor de desenvolvimento:
 
-## Running end-to-end tests
+```bash
+  npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ou o comando:
 
-## Further help
+```bash
+  ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 3. Configurar API URL do backend:
+
+Abra o arquivo `src/environments/environment.development.ts` para editar as variáveis de ambiente de desenvolvimento. Um exemplo de configuração pode ser:
+
+```typescript
+export const environment = {
+  production: false,
+  // URL do backend para ambiente de desenvolvimento
+  apiUrl: "http://localhost:8080/api/",
+};
+```
+
+Para o ambiente de produção, edite o arquivo
+`src/environments/environment.ts`
+
+```typescript
+export const environment = {
+  production: true,
+  // URL do backend para ambiente de produção
+  apiUrl: "https://api.seuservico.com/api",
+};
+```
+
+Para finalizar a configuração do projeto, você deve configurar o backend. Siga as instruções abaixo para configurar e executar o backend:
+
+1. Visite o repositório do backend
+
+2. Siga as instruções fornecidas no README.md do repositório do backend para configurar e executar o servidor backend.
+
+3. Certifique-se de que o backend esteja em execução e acessível na URL configurada no arquivo de variáveis de ambiente do projeto

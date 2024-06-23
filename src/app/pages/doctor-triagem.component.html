@@ -59,6 +59,78 @@
   </div>
 
   <div class="form_control">
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="emergency"
+        formControlName="classificacao"
+        name="classificacao"
+        value="1"
+      />
+      <label for="emergency">
+        <span class="radio_icon"></span>
+        <p>Emergência</p>
+      </label>
+    </div>
+
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="m-urgente"
+        formControlName="classificacao"
+        name="classificacao"
+        value="2"
+      />
+      <label for="m-urgente">
+        <span class="radio_icon"></span>
+        <p>Muito Urgente</p>
+      </label>
+    </div>
+
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="urgente"
+        formControlName="classificacao"
+        name="classificacao"
+        value="3"
+      />
+      <label for="urgente">
+        <span class="radio_icon"></span>
+        <p>Muito Urgente</p>
+      </label>
+    </div>
+
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="p-urgente"
+        formControlName="classificacao"
+        name="classificacao"
+        value="4"
+      />
+      <label for="p-urgente">
+        <span class="radio_icon"></span>
+        <p>Pouco Urgente</p>
+      </label>
+    </div>
+
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="n-urgente"
+        formControlName="classificacao"
+        name="classificacao"
+        value="5"
+      />
+      <label for="n-urgente">
+        <span class="radio_icon"></span>
+        <p>Não Urgente</p>
+      </label>
+    </div>
+  </div>
+
+  <div class="form_control">
     <label for="symptoms">Sintomas</label>
     <textarea
       id="symptoms"
@@ -160,6 +232,15 @@
         <p>Não Preferencial</p>
       </label>
     </div>
+  </div>
+
+  <div class="form_control">
+    <label for="parecer">Parecer Técnico</label>
+    <textarea
+      id="parecer"
+      placeholder="Descreva um um parecer ao paciente"
+      formControlName="parecer"
+    ></textarea>
   </div>
 
   <button type="submit" [disabled]="form.invalid">Solicitar Atendimento</button>

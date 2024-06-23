@@ -15,3 +15,21 @@ export type TriagemResponse = {
     descricao: string;
   };
 };
+
+export type PreTriagemResponse = {
+  message: string;
+  data: {
+    cpf: string;
+    nome: string;
+    data_nascimento: string;
+    peso: number;
+    altura: number;
+    sintomas: string;
+    response_gpt: {
+      classificacao: string;
+      cor: string;
+      nivel: 4;
+      descricao: string;
+    };
+  };
+};
