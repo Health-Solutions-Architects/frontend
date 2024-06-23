@@ -27,11 +27,10 @@ textarea {
   color: $primary-color;
   font-size: $sz-14;
 
-  padding: 0 $sz-8;
+  padding: $sz-8;
   border: 1px solid $primary-color;
   border-radius: $sz-4;
   outline: none;
-  height: $sz-32;
 
   &:focus {
     border: 1px solid $secondary-color;
@@ -60,6 +59,11 @@ button {
   outline: none;
 
   margin-top: $sz-16;
-  height: $sz-32;
+  padding: $sz-8 0;
   width: 100%;
+
+  &:disabled {
+    background-color: $gray;
+    border: 1px solid $gray;
+  }
 }

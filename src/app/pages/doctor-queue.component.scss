@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+:host {
+  @include start;
+}
+
+h1 {
+  @include display($primary-color);
+}
+
+h2 {
+  @include subtitle;
+}
+
+.pacients_queue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $sz-16;
+
+  padding-left: $sz-16;
+}
+
+.pacient {
+  display: flex;
+  align-items: center;
+  gap: $sz-8;
+
+  padding: $sz-2;
+  border-radius: $sz-16;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  .indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: $sz-24;
+    width: $sz-24;
+
+    @include details;
+    @include tags;
+  }
+
+  p {
+    @include body();
+  }
+}

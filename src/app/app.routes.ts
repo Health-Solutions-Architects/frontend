@@ -13,10 +13,25 @@ export const routes: Routes = [
       import('@Pages/doctor-root.component').then((c) => c.DoctorRootComponent),
     children: [
       {
+        path: '',
+        pathMatch: 'prefix',
+        loadComponent: () =>
+          import('@Pages/doctor-home.component').then(
+            (c) => c.DoctorHomeComponent
+          ),
+      },
+      {
         path: 'login',
         loadComponent: () =>
           import('@Pages/doctor-login.component').then(
             (c) => c.DoctorLoginComponent
+          ),
+      },
+      {
+        path: 'queue',
+        loadComponent: () =>
+          import('@Pages/doctor-queue.component').then(
+            (c) => c.DoctorQueueComponent
           ),
       },
     ],
@@ -38,15 +53,15 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'triagem',
+    path: 'pre-triagem',
     loadComponent: () =>
-      import('@Pages/triagem.component').then((c) => c.TriagemComponent),
+      import('@Pages/pre-triagem.component').then((c) => c.PreTriagemComponent),
   },
   {
     path: 'triagem-feedback',
     loadComponent: () =>
-      import('@Pages/triagem-feedback.component').then(
-        (c) => c.TriagemFeedbackComponent
+      import('@Pages/pre-triagem-feedback.component').then(
+        (c) => c.PreTriagemFeedbackComponent
       ),
   },
 ];

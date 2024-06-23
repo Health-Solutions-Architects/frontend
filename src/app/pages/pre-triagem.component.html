@@ -7,7 +7,7 @@
       id="name"
       autocomplete="name"
       placeholder="Infome seu nome completo"
-      formControlName="name"
+      formControlName="nome"
     />
   </div>
 
@@ -30,7 +30,7 @@
       mask="0*,999"
       [dropSpecialCharacters]="false"
       placeholder="ex: 85,2"
-      formControlName="weight"
+      formControlName="peso"
     />
   </div>
 
@@ -42,17 +42,17 @@
       mask="0,09"
       [dropSpecialCharacters]="false"
       placeholder="ex: 1,70"
-      formControlName="height"
+      formControlName="altura"
     />
   </div>
 
   <div class="form_control">
     <label for="dateOfBirth">Data de nascimento</label>
     <p-calendar
-      formControlName="dateOfBirth"
       inputId="dateOfBirth"
       dateFormat="dd/mm/yy"
       placeholder="Digite sua data de nascimento"
+      formControlName="data_nascimento"
     />
   </div>
 
@@ -60,10 +60,10 @@
     <label for="symptoms">Sintomas</label>
     <textarea
       id="symptoms"
-      formControlName="symptoms"
       placeholder="Digite sua data de nascimento"
+      formControlName="sintomas"
     ></textarea>
   </div>
 
-  <button type="submit">Solicitar Atendimento!</button>
+  <button type="submit" [disabled]="form.invalid">Solicitar Atendimento</button>
 </form>

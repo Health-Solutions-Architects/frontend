@@ -1,6 +1,6 @@
 // COLORS
 $primary-color: #1222bf;
-$secondary-color: #9ed2fd;
+$secondary-color: #d1eaff;
 
 $gray: #676da4;
 $white: #fff;
@@ -9,7 +9,7 @@ $white: #fff;
 $sz-2: 0.125rem;
 $sz-4: 0.25rem;
 $sz-8: 0.5rem;
-$sz-12: 0.725rem;
+$sz-12: 0.75rem;
 $sz-14: 0.875rem;
 $sz-16: 1rem;
 $sz-20: 1.25rem;
@@ -17,16 +17,22 @@ $sz-24: 1.5rem;
 $sz-32: 2rem;
 $sz-64: 4rem;
 
-$emergency-tag-1: #1b68ab;
-$emergency-tag-2: #26743f;
-$emergency-tag-3: #f0cb23;
-$emergency-tag-4: #cd612d;
-$emergency-tag-5: #ec2045;
+$emergency-tag-1: #196eac;
+$emergency-tag-2: #14c285;
+$emergency-tag-3: #fcbf54;
+$emergency-tag-4: #ee6c3b;
+$emergency-tag-5: #ec0e47;
 
 // FONT VARIABLES
 @mixin display($color: $white) {
   color: $color;
   font-size: $sz-32;
+  font-weight: 700;
+}
+
+@mixin subtitle($color: $gray) {
+  color: $color;
+  font-size: $sz-20;
   font-weight: 700;
 }
 
@@ -53,15 +59,52 @@ $emergency-tag-5: #ec2045;
   min-height: 100dvh;
 }
 
+@mixin start {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-24;
+
+  padding: $sz-32;
+  min-height: 100dvh;
+}
+
 @mixin links {
-  color: $primary-color;
+  color: $gray;
   font-size: $sz-12;
   font-weight: 700;
   text-decoration: none;
 
+  transition: 0.3s;
   cursor: pointer;
 
   &:hover {
+    color: $primary-color;
     text-decoration: underline;
+  }
+}
+
+@mixin details {
+  color: $white;
+  font-size: $sz-12;
+  line-height: $sz-12;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@mixin tags {
+  &.lvl1 {
+    background-color: $emergency-tag-1;
+  }
+  &.lvl2 {
+    background-color: $emergency-tag-2;
+  }
+  &.lvl3 {
+    background-color: $emergency-tag-3;
+  }
+  &.lvl4 {
+    background-color: $emergency-tag-4;
+  }
+  &.lvl5 {
+    background-color: $emergency-tag-5;
   }
 }

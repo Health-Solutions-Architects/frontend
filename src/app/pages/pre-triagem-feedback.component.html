@@ -1,0 +1,37 @@
+<h1>Atendimento solicitado com sucesso!</h1>
+<p>
+  Estamos encaminhado você ao um atendimento personalizadoo. Aguarde que você
+  será atendido em breve!
+</p>
+
+@if(triagemResponse() !== null){
+<p
+  class="feedback_tag"
+  [class.lvl1]="triagemResponse()!.response.data.cor == 'azul'"
+  [class.lvl2]="triagemResponse()!.response.data.cor == 'verde'"
+  [class.lvl3]="triagemResponse()!.response.data.cor == 'amarelo'"
+  [class.lvl4]="triagemResponse()!.response.data.cor == 'laranja'"
+  [class.lvl5]="triagemResponse()!.response.data.cor == 'vermelho'"
+>
+  {{ triagemResponse()!.response.data.classificacao }}
+</p>
+}
+
+<div class="pacient_data">
+  <div class="data_field">
+    <p>Nome do paciente</p>
+    <p>{{ triagemResponse()?.pacient?.nome ?? "Sem dados" }}</p>
+  </div>
+  <div class="data_field">
+    <p>Data de Nascimento</p>
+    <p>{{ triagemResponse()?.pacient?.data_nascimento ?? "Sem dados" }}</p>
+  </div>
+  <div class="data_field">
+    <p>Altura</p>
+    <p>{{ triagemResponse()?.pacient?.altura ?? "Sem dados" }}</p>
+  </div>
+  <div class="data_field">
+    <p>Sintomas relatados</p>
+    <p>{{ triagemResponse()?.pacient?.sintomas ?? "Sem dados" }}</p>
+  </div>
+</div>

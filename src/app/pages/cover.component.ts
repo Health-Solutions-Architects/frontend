@@ -17,8 +17,8 @@ import { RouterLink } from '@angular/router';
     <h1>Health Solutions Architects</h1>
     <div class="actions">
       <a routerLink="/doctor/login"> Equipe Médica </a>
-      <a routerLink="/pacient/login"> Atendimento com Login </a>
-      <a routerLink="triagem"> Atendimento Rápido </a>
+      <a routerLink="/pacient/login"> Acesso do Paciente </a>
+      <a routerLink="triagem"> Triagem </a>
     </div>
   `,
 })

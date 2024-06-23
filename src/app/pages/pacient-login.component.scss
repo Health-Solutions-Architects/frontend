@@ -8,3 +8,11 @@
 h1 {
   @include display($primary-color);
 }
+
+.button_register {
+  color: $primary-color;
+  background-color: $white;
+  border: 1px solid $primary-color;
+  margin-top: 0;
+  width: 280px;
+}

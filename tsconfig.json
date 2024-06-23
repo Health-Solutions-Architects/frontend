@@ -23,9 +23,10 @@
       "dom"
     ],
     "paths": {
+      "@Pages/*": ["./src/app/pages/*"],
       "@Components/*": ["./src/app/components/*"],
       "@Services/*": ["./src/app/services/*"],
-      "@Pages/*": ["./src/app/pages/*"],
+      "@Types/*": ["./src/app/types/*"],
       "@Environments/*": ["./src/environments/*"],
     }
   },
