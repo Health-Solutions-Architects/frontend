@@ -17,11 +17,11 @@ $sz-24: 1.5rem;
 $sz-32: 2rem;
 $sz-64: 4rem;
 
-$emergency-tag-1: #196eac;
-$emergency-tag-2: #14c285;
+$emergency-tag-1: #ec0e47;
+$emergency-tag-2: #ee6c3b;
 $emergency-tag-3: #fcbf54;
-$emergency-tag-4: #ee6c3b;
-$emergency-tag-5: #ec0e47;
+$emergency-tag-4: #14c285;
+$emergency-tag-5: #196eac;
 
 // FONT VARIABLES
 @mixin display($color: $white) {
@@ -56,6 +56,7 @@ $emergency-tag-5: #ec0e47;
   justify-content: center;
   gap: $sz-16;
 
+  padding: $sz-32;
   min-height: 100dvh;
 }
 

@@ -1,0 +1,46 @@
+@use "variables" as *;
+@use "form" as *;
+
+:host {
+  @include center;
+}
+
+h1 {
+  @include display($primary-color);
+}
+
+.form_control:has(.input_radio) {
+  gap: $sz-8;
+}
+
+.input_radio {
+  display: flex;
+  align-items: center;
+  gap: $sz-8;
+
+  &:has(input:checked) .radio_icon {
+    background-color: $primary-color;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: $sz-8;
+  }
+
+  .radio_icon {
+    display: inline-block;
+
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 50%;
+    outline: 1px solid $primary-color;
+    height: $sz-16;
+    width: $sz-16;
+  }
+}

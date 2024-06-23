@@ -34,6 +34,20 @@ export const routes: Routes = [
             (c) => c.DoctorQueueComponent
           ),
       },
+      {
+        path: 'triagem',
+        loadComponent: () =>
+          import('@Pages/doctor-triagem.component').then(
+            (c) => c.DoctorTriagemComponent
+          ),
+      },
+      {
+        path: 'treatment',
+        loadComponent: () =>
+          import('@Pages/doctor-treatment.component').then(
+            (c) => c.DoctorTreatmentComponent
+          ),
+      },
     ],
   },
   {

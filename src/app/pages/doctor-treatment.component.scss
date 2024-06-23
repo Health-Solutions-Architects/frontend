@@ -1,0 +1,109 @@
+@use "variables" as *;
+
+:host {
+  @include start;
+}
+
+h1 {
+  @include display($primary-color);
+}
+
+.datetime {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    @include body;
+  }
+}
+
+.interaction {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-8;
+
+  label {
+    color: $primary-color;
+    font-size: $sz-14;
+    font-weight: 700;
+  }
+
+  textarea {
+    color: $primary-color;
+    font-size: $sz-14;
+
+    padding: $sz-4 $sz-8;
+    border: 1px solid $primary-color;
+    border-radius: $sz-4;
+    outline: none;
+
+    min-height: $sz-64;
+    height: fit-content;
+
+    &:focus {
+      border: 1px solid $secondary-color;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+button {
+  @include cta($primary-color);
+  padding: $sz-8;
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  border-radius: $sz-4;
+}
+
+.pacient_data {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-12;
+}
+
+.classification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $sz-16;
+
+  .indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $white;
+    padding: $sz-2 $sz-8;
+    border-radius: $sz-4;
+
+    @include tags;
+  }
+}
+
+.data_group {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-2;
+
+  padding: $sz-8 $sz-16;
+  border-left: 2px solid $primary-color;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  p:first-child {
+    color: $gray;
+    font-size: $sz-14;
+    font-weight: 400;
+  }
+
+  p:last-child {
+    font-size: $sz-16;
+    font-weight: 700;
+  }
+}

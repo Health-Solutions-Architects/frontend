@@ -9,8 +9,8 @@ import { RouterLink } from '@angular/router';
     <h1>Processos</h1>
     <div class="actions">
       <a routerLink="queue">Lista de Espera</a>
-      <a routerLink="">Triagem</a>
-      <a routerLink="">Atendimentos</a>
+      <a routerLink="triagem">Triagem</a>
+      <a routerLink="treatment">Atendimentos</a>
     </div>
   `,
 })
