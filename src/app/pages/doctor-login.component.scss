@@ -8,3 +8,10 @@
 h1 {
   @include display($primary-color);
 }
+
+.login_error {
+  color: $emergency-tag-1;
+  font-size: $sz-14;
+  font-weight: 700;
+  text-align: center;
+}

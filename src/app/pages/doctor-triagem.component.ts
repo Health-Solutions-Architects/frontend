@@ -1,3 +1,4 @@
+import { NavbarComponent } from '@Components/navbar.component';
 import { Component, inject } from '@angular/core';
 import {
   NonNullableFormBuilder,
@@ -10,7 +11,12 @@ import { CalendarModule } from 'primeng/calendar';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule, NgxMaskDirective, CalendarModule],
+  imports: [
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    CalendarModule,
+    NavbarComponent,
+  ],
   templateUrl: 'doctor-triagem.component.html',
   styleUrl: 'doctor-triagem.component.scss',
 })
@@ -34,6 +40,7 @@ export class DoctorTriagemComponent {
     oximetria: ['', [Validators.required]],
     pressao: ['', [Validators.required]],
     temperatura: ['', [Validators.required]],
+    prioridade: ['', [Validators.required]],
   });
 
   onSubmit() {}

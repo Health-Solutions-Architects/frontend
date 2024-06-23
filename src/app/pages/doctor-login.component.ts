@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { AuthService } from '@Services/auth.service';
 
 @Component({
   standalone: true,
@@ -14,10 +15,14 @@ import {
 })
 export class DoctorLoginComponent {
   private fb = inject(NonNullableFormBuilder);
+  private authService = inject(AuthService);
   protected form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
+  loginError = false;
 
-  onSubmit() {}
+  onSubmit() {
+    this.authService.login(this.form.value);
+  }
 }

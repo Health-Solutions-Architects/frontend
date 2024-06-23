@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guard/auth.guard';
+import { loggedGuard } from './guard/logged.auth';
+import { triagemFeedbackGuard } from './guard/triagem-feedback.guard';
 
 export const routes: Routes = [
   {
@@ -19,6 +22,7 @@ export const routes: Routes = [
           import('@Pages/doctor-home.component').then(
             (c) => c.DoctorHomeComponent
           ),
+        canActivate: [authGuard],
       },
       {
         path: 'login',
@@ -26,6 +30,7 @@ export const routes: Routes = [
           import('@Pages/doctor-login.component').then(
             (c) => c.DoctorLoginComponent
           ),
+        canActivate: [loggedGuard],
       },
       {
         path: 'queue',
@@ -33,6 +38,7 @@ export const routes: Routes = [
           import('@Pages/doctor-queue.component').then(
             (c) => c.DoctorQueueComponent
           ),
+        canActivate: [authGuard],
       },
       {
         path: 'triagem',
@@ -40,6 +46,7 @@ export const routes: Routes = [
           import('@Pages/doctor-triagem.component').then(
             (c) => c.DoctorTriagemComponent
           ),
+        canActivate: [authGuard],
       },
       {
         path: 'treatment',
@@ -47,6 +54,7 @@ export const routes: Routes = [
           import('@Pages/doctor-treatment.component').then(
             (c) => c.DoctorTreatmentComponent
           ),
+        canActivate: [authGuard],
       },
     ],
   },
@@ -77,5 +85,10 @@ export const routes: Routes = [
       import('@Pages/pre-triagem-feedback.component').then(
         (c) => c.PreTriagemFeedbackComponent
       ),
+    canActivate: [triagemFeedbackGuard],
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];

@@ -8,3 +8,14 @@
   box-sizing: border-box;
   font-family: "Sulphur Point", sans-serif;
 }
+
+::-webkit-scrollbar {
+  background-color: $secondary-color;
+  border-radius: $sz-4;
+  width: $sz-4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $gray;
+  border-radius: $sz-4;
+}

@@ -1,5 +1,13 @@
 @use "variables" as *;
 
+.form_control:has(p-calendar.ng-invalid.ng-touched) label {
+  color: $emergency-tag-1;
+}
+
+.form_control p-calendar.ng-invalid.ng-touched input {
+  border: 1px solid $emergency-tag-1;
+}
+
 .p-calendar {
   width: 100%;
 

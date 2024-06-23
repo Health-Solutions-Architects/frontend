@@ -43,7 +43,7 @@ $emergency-tag-5: #196eac;
 }
 
 @mixin body($color: $gray) {
-  color: $gray;
+  color: $color;
   font-size: $sz-14;
   font-weight: 400;
 }
@@ -57,7 +57,9 @@ $emergency-tag-5: #196eac;
   gap: $sz-16;
 
   padding: $sz-32;
+  margin-inline: auto;
   min-height: 100dvh;
+  max-width: 720px;
 }
 
 @mixin start {
@@ -66,7 +68,9 @@ $emergency-tag-5: #196eac;
   gap: $sz-24;
 
   padding: $sz-32;
+  margin-inline: auto;
   min-height: 100dvh;
+  max-width: 720px;
 }
 
 @mixin links {

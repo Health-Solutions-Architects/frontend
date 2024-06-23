@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://[2804:40a8:2e3:2e00:e69b:d904:7f19:fa97]:5000/api/',
+  apiUrl: 'http://[2804:40a8:2e3:2e00:67a6:11e6:e4ed:a1ff]:5000/api/',
 };

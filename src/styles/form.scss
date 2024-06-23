@@ -9,11 +9,15 @@ form,
 
 form {
   gap: $sz-16;
-  width: 280px;
+  width: clamp(280px, 80%, 480px);
 }
 
 .form_control {
   gap: $sz-2;
+
+  &:has(input.ng-invalid.ng-touched) label {
+    color: $emergency-tag-1;
+  }
 }
 
 label {
@@ -31,6 +35,10 @@ textarea {
   border: 1px solid $primary-color;
   border-radius: $sz-4;
   outline: none;
+
+  &.ng-invalid.ng-touched {
+    border: 1px solid $emergency-tag-1;
+  }
 
   &:focus {
     border: 1px solid $secondary-color;
@@ -61,6 +69,7 @@ button {
   margin-top: $sz-16;
   padding: $sz-8 0;
   width: 100%;
+  cursor: pointer;
 
   &:disabled {
     background-color: $gray;

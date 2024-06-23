@@ -1,16 +1,6 @@
+<hsa-navbar />
 <h1>Triagem</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="form_control">
-    <label for="name">Nome completo</label>
-    <input
-      type="text"
-      id="name"
-      autocomplete="name"
-      placeholder="Infome seu nome completo"
-      formControlName="nome"
-    />
-  </div>
-
   <div class="form_control">
     <label for="cpf">CPF</label>
     <input
@@ -19,6 +9,18 @@
       placeholder="Infome seu CPF"
       formControlName="cpf"
       mask="000.000.000-00"
+    />
+  </div>
+
+  @if(form.controls.cpf.valid) {
+  <div class="form_control">
+    <label for="name">Nome completo</label>
+    <input
+      type="text"
+      id="name"
+      autocomplete="name"
+      placeholder="Infome seu nome completo"
+      formControlName="nome"
     />
   </div>
 
@@ -131,5 +133,35 @@
     />
   </div>
 
+  <div class="form_control">
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="priority1"
+        formControlName="prioridade"
+        name="prioridade"
+        value="1"
+      />
+      <label for="priority1">
+        <span class="radio_icon"></span>
+        <p>Preferencial</p>
+      </label>
+    </div>
+    <div class="input_radio">
+      <input
+        type="radio"
+        id="priority2"
+        formControlName="prioridade"
+        name="prioridade"
+        value="2"
+      />
+      <label for="priority2">
+        <span class="radio_icon"></span>
+        <p>Não Preferencial</p>
+      </label>
+    </div>
+  </div>
+
   <button type="submit" [disabled]="form.invalid">Solicitar Atendimento</button>
+  }
 </form>

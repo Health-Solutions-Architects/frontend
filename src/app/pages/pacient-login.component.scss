@@ -14,5 +14,5 @@ h1 {
   background-color: $white;
   border: 1px solid $primary-color;
   margin-top: 0;
-  width: 280px;
+  width: clamp(280px, 80%, 480px);
 }

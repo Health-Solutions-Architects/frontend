@@ -3,6 +3,7 @@
 :host {
   @include center;
   background-color: $primary-color;
+  max-width: none;
 }
 
 h1 {

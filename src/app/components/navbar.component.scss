@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+button.nav_action {
+  border: none;
+  background-color: transparent;
+}
+
+.nav_action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $sz-8;
+
+  padding: $sz-8;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}

@@ -2,6 +2,7 @@
 
 :host {
   @include start;
+  max-width: 720px;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h2 {
   align-items: center;
   gap: $sz-8;
 
-  padding: $sz-2;
+  padding: $sz-4;
   border-radius: $sz-16;
   transition: 0.3s;
 
@@ -47,7 +48,12 @@ h2 {
     @include tags;
   }
 
+  img {
+    margin-left: auto;
+    margin-right: $sz-16;
+  }
+
   p {
-    @include body();
+    @include body($primary-color);
   }
 }

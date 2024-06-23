@@ -28,5 +28,12 @@
     />
   </div>
   <a routerLink="">Esqueci minha senha</a>
-  <button type="submit">Entrar</button>
+
+  @if(loginError){
+  <p class="login_error">
+    Usuario ou senha incorretos, verifique suas credênciais e tentenovamente!
+  </p>
+  }
+
+  <button type="submit" [disabled]="form.invalid">Entrar</button>
 </form>

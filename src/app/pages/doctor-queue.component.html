@@ -1,23 +1,27 @@
+<hsa-navbar />
 <h1>Fila de espera</h1>
 <div class="pacients_queue">
+  @for(pacient of (queue | async)?.data; track pacient.fila_id) {
   <div class="pacient">
-    <span class="indicator lvl5">1</span>
-    <p>Paciente 1</p>
+    <span
+      class="indicator"
+      [class.lvl1]="pacient.nivel === 'vermelho'"
+      [class.lvl2]="pacient.nivel === 'laranja'"
+      [class.lvl3]="pacient.nivel === 'amarelo'"
+      [class.lvl4]="pacient.nivel === 'verde'"
+      [class.lvl5]="pacient.nivel === 'azul'"
+    >
+      {{ $index + 1 }}
+    </span>
+    <p>{{ pacient.nome }}</p>
+    @if(pacient.prioridade === 'preferencial'){
+    <img
+      ngSrc="assets/svg/person_alert.svg"
+      height="16"
+      width="16"
+      alt="Prioridade"
+    />
+    }
   </div>
-  <div class="pacient">
-    <span class="indicator lvl4">2</span>
-    <p>Paciente 2</p>
-  </div>
-  <div class="pacient">
-    <span class="indicator lvl3">3</span>
-    <p>Paciente 3</p>
-  </div>
-  <div class="pacient">
-    <span class="indicator lvl2">4</span>
-    <p>Paciente 4</p>
-  </div>
-  <div class="pacient">
-    <span class="indicator lvl1">5</span>
-    <p>Paciente 5</p>
-  </div>
+  }
 </div>

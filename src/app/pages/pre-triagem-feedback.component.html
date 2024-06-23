@@ -7,11 +7,11 @@
 @if(triagemResponse() !== null){
 <p
   class="feedback_tag"
-  [class.lvl1]="triagemResponse()!.response.data.cor == 'azul'"
-  [class.lvl2]="triagemResponse()!.response.data.cor == 'verde'"
+  [class.lvl1]="triagemResponse()!.response.data.cor == 'vermelho'"
+  [class.lvl2]="triagemResponse()!.response.data.cor == 'laranja'"
   [class.lvl3]="triagemResponse()!.response.data.cor == 'amarelo'"
-  [class.lvl4]="triagemResponse()!.response.data.cor == 'laranja'"
-  [class.lvl5]="triagemResponse()!.response.data.cor == 'vermelho'"
+  [class.lvl4]="triagemResponse()!.response.data.cor == 'verde'"
+  [class.lvl5]="triagemResponse()!.response.data.cor == 'azul'"
 >
   {{ triagemResponse()!.response.data.classificacao }}
 </p>
