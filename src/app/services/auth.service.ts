@@ -33,6 +33,7 @@ export class AuthService {
   }
 
   login(form: Partial<{ email: string; password: string }>) {
+    console.log(this.path);
     return this.http
       .post<AuthResponse>(this.path + 'login', form)
       .pipe(take(1))

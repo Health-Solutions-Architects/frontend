@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'http://167.234.231.114:5000/',
+  production: false,
+  apiUrl: 'https://backend-hacka-saude.ribeirovp2.tech/api/',
 };
